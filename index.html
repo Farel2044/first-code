@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Lerff Esport Journal</title>
 
-<meta name="description" content="Blog pribadi Farel Aditya Firmansyah tentang esports, teknologi, dan pengembangan diri.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -19,36 +19,37 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0f172a;
+background:#0b1120;
 color:white;
 overflow-x:hidden;
 }
 
 #particles{
 position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
 z-index:-1;
-top:0;
-left:0;
 }
 
 nav{
 position:fixed;
-width:100%;
 top:0;
+left:0;
+width:100%;
 padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(15,23,42,.75);
-backdrop-filter:blur(12px);
+background:rgba(10,15,30,.7);
+backdrop-filter:blur(15px);
 z-index:1000;
 }
 
 .logo{
 font-size:1.4rem;
-font-weight:700;
+font-weight:800;
 color:#22d3ee;
 }
 
@@ -79,6 +80,7 @@ padding:20px;
 
 .hero h1{
 font-size:4rem;
+font-weight:800;
 color:#22d3ee;
 text-shadow:0 0 25px #22d3ee;
 }
@@ -92,38 +94,53 @@ color:#cbd5e1;
 .typing{
 color:white;
 font-weight:600;
+margin-top:10px;
 }
 
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:14px 30px;
+margin-top:25px;
+padding:14px 28px;
+border-radius:40px;
 background:#22d3ee;
 color:#000;
-font-weight:700;
-border-radius:30px;
 text-decoration:none;
+font-weight:700;
 transition:.3s;
 }
 
 .btn:hover{
-transform:scale(1.08);
+transform:translateY(-5px);
 }
 
 section{
 padding:100px 10%;
 }
 
-.title{
-text-align:center;
-font-size:2.3rem;
-margin-bottom:50px;
+.section-title{
+font-size:2.5rem;
 color:#22d3ee;
+text-align:center;
+margin-bottom:50px;
 }
 
-.about{
+.card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:30px;
+backdrop-filter:blur(12px);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(34,211,238,.4);
+}
+
+.about-grid{
 display:grid;
-grid-template-columns:1fr 2fr;
+grid-template-columns:300px 1fr;
 gap:40px;
 align-items:center;
 }
@@ -131,7 +148,6 @@ align-items:center;
 .avatar{
 width:250px;
 height:250px;
-margin:auto;
 border-radius:50%;
 background:linear-gradient(135deg,#22d3ee,#64748b);
 display:flex;
@@ -139,41 +155,70 @@ justify-content:center;
 align-items:center;
 font-size:80px;
 font-weight:bold;
+margin:auto;
 box-shadow:0 0 35px #22d3ee;
 }
 
-.card{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-padding:30px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-transition:.3s;
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px rgba(34,211,238,.5);
+.stat{
+text-align:center;
+padding:25px;
+background:#111827;
+border-radius:15px;
 }
 
-.article h3{
-margin-bottom:15px;
+.stat h3{
+font-size:2rem;
 color:#22d3ee;
 }
 
-.contact-box{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-justify-content:center;
+.article-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
-.contact-item{
-padding:20px;
-min-width:250px;
-text-align:center;
+.article-card{
+background:#111827;
+padding:25px;
+border-radius:18px;
+transition:.3s;
+}
+
+.article-card:hover{
+transform:translateY(-8px);
+}
+
+.timeline{
+border-left:3px solid #22d3ee;
+padding-left:25px;
+}
+
+.timeline-item{
+margin-bottom:35px;
+}
+
+.timeline-item h3{
+color:#22d3ee;
+margin-bottom:10px;
+}
+
+.contact-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.contact-card{
+padding:25px;
+background:#111827;
 border-radius:15px;
-background:#1e293b;
+text-align:center;
 }
 
 footer{
@@ -187,16 +232,16 @@ color:#94a3b8;
 position:fixed;
 bottom:20px;
 right:20px;
-background:#22d3ee;
-color:black;
 width:50px;
 height:50px;
+background:#22d3ee;
+color:black;
 border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
 text-decoration:none;
-font-size:22px;
+font-size:20px;
 font-weight:bold;
 }
 
@@ -206,18 +251,20 @@ font-weight:bold;
 font-size:2.5rem;
 }
 
-.about{
+.about-grid{
 grid-template-columns:1fr;
 text-align:center;
 }
 
 nav ul{
-gap:12px;
+gap:10px;
 font-size:14px;
 }
 }
+
 </style>
 </head>
+
 <body>
 
 <canvas id="particles"></canvas>
@@ -228,7 +275,8 @@ font-size:14px;
 <ul>
 <li><a href="#home">Beranda</a></li>
 <li><a href="#about">Tentang</a></li>
-<li><a href="#article">Artikel</a></li>
+<li><a href="#articles">Artikel</a></li>
+<li><a href="#timeline">Timeline</a></li>
 <li><a href="#contact">Kontak</a></li>
 </ul>
 </nav>
@@ -239,61 +287,150 @@ font-size:14px;
 
 <p class="typing" id="typing"></p>
 
-<a href="#article" class="btn">Baca Artikel</a>
+<a href="#about" class="btn">Mulai Jelajah</a>
 </div>
 </section>
 
 <section id="about">
 
-<h2 class="title">Tentang Saya</h2>
+<h2 class="section-title">Tentang Saya</h2>
 
-<div class="about">
+<div class="about-grid">
 
 <div class="avatar">
 FA
 </div>
 
 <div class="card">
-<p>
-Halo! Saya Farel Aditya Firmansyah, seorang penggemar esports dan teknologi.
-Saya percaya bahwa game tidak hanya menjadi hiburan, tetapi juga dapat
-mengembangkan kemampuan berpikir, strategi, kerja sama tim, komunikasi,
-serta kemampuan mengambil keputusan dengan cepat.
 
-Melalui Lerff Esport Journal, saya ingin berbagi pandangan positif tentang
-dunia game, teknologi, dan perkembangan generasi muda di era digital.
+<h3>Halo, Saya Farel 👋</h3>
+
+<br>
+
+<p>
+Saya adalah penggemar esports dan teknologi yang percaya bahwa game
+bukan hanya hiburan, tetapi juga sarana belajar strategi,
+komunikasi, kerja sama tim, dan pengambilan keputusan.
+
+Melalui Lerff Esport Journal saya ingin berbagi pandangan positif
+tentang dunia game, perkembangan teknologi, dan perjalanan belajar saya.
 </p>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="article">
+  <section id="stats">
 
-<h2 class="title">Artikel Pilihan</h2>
+<h2 class="section-title">Statistik</h2>
 
-<div class="card article">
+<div class="stats">
 
-<h3>Pengaruh Positif Game Online terhadap Kecerdasan Siswa</h3>
+<div class="stat">
+<h3>18</h3>
+<p>Umur</p>
+</div>
+
+<div class="stat">
+<h3>Esports</h3>
+<p>Minat Utama</p>
+</div>
+
+<div class="stat">
+<h3>SMK</h3>
+<p>Status Pendidikan</p>
+</div>
+
+<div class="stat">
+<h3>∞</h3>
+<p>Semangat Belajar</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="articles">
+
+<h2 class="section-title">Artikel Pilihan</h2>
+
+<div class="article-grid">
+
+<div class="article-card">
+
+<h3>🎮 Pengaruh Positif Game Online terhadap Kecerdasan Siswa</h3>
+
+<br>
 
 <p>
-Game online sering dianggap hanya sebagai hiburan. Namun jika dimainkan
-secara bijak dan terkontrol, game dapat memberikan berbagai manfaat bagi
-perkembangan kemampuan berpikir siswa.
-
-Banyak game modern melatih pemain untuk memecahkan masalah, membuat strategi,
-mengelola sumber daya, dan mengambil keputusan dalam waktu singkat. Selain itu,
-game multiplayer juga membantu meningkatkan kemampuan komunikasi dan kerja sama tim.
-
-Beberapa penelitian menunjukkan bahwa permainan tertentu dapat membantu meningkatkan
-fokus, koordinasi mata dan tangan, serta kemampuan berpikir kritis.
-Karena itu, game online tidak selalu berdampak negatif apabila dimainkan secara
-seimbang dengan kegiatan belajar, olahraga, dan aktivitas sosial lainnya.
-
-Kunci utama adalah pengelolaan waktu yang baik sehingga game dapat menjadi sarana
-belajar yang menyenangkan sekaligus melatih berbagai keterampilan penting di masa depan.
+Game online dapat membantu meningkatkan kemampuan berpikir strategis,
+pengambilan keputusan, kerja sama tim, fokus, serta kemampuan
+memecahkan masalah secara cepat dalam situasi yang dinamis.
 </p>
+
+</div>
+
+<div class="article-card">
+
+<h3>🏆 Esports dan Kerja Sama Tim</h3>
+
+<br>
+
+<p>
+Dalam esports, kemenangan tidak hanya ditentukan oleh kemampuan individu,
+tetapi juga komunikasi, koordinasi, dan kepercayaan antar anggota tim.
+</p>
+
+</div>
+
+<div class="article-card">
+
+<h3>💡 Belajar Strategi dari Dunia Game</h3>
+
+<br>
+
+<p>
+Banyak game kompetitif melatih pemain untuk membuat keputusan,
+mengatur sumber daya, dan merancang strategi dalam waktu singkat.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="timeline">
+
+<h2 class="section-title">Perjalanan Saya</h2>
+
+<div class="card">
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>2024</h3>
+<p>Mulai tertarik dengan dunia esports dan kompetisi game online.</p>
+</div>
+
+<div class="timeline-item">
+<h3>2025</h3>
+<p>Mulai mempelajari teknologi, website, dan pengembangan diri.</p>
+</div>
+
+<div class="timeline-item">
+<h3>2026</h3>
+<p>Membangun Lerff Esport Journal dan belajar membuat website sendiri.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Masa Depan</h3>
+<p>Terus belajar teknologi, pengembangan web, dan dunia digital.</p>
+</div>
+
+</div>
 
 </div>
 
@@ -301,17 +438,19 @@ belajar yang menyenangkan sekaligus melatih berbagai keterampilan penting di mas
 
 <section id="contact">
 
-<h2 class="title">Kontak</h2>
+<h2 class="section-title">Kontak</h2>
 
 <div class="contact-box">
 
-<div class="contact-item">
-<h3>TikTok</h3>
+<div class="contact-card">
+<h3>📱 TikTok</h3>
+<br>
 <p>@Farelleraf</p>
 </div>
 
-<div class="contact-item">
-<h3>Email</h3>
+<div class="contact-card">
+<h3>📧 Email</h3>
+<br>
 <p>farelfirmansyah2044@gmail.com</p>
 </div>
 
@@ -320,44 +459,77 @@ belajar yang menyenangkan sekaligus melatih berbagai keterampilan penting di mas
 </section>
 
 <footer>
-© 2026 Lerff Esport Journal • Created by Farel Aditya Firmansyah
+
+<p>
+© 2026 Lerff Esport Journal
+</p>
+
+<br>
+
+<p>
+Created by Farel Aditya Firmansyah
+</p>
+
 </footer>
 
 <a href="#home" class="top-btn">↑</a>
 
 <script>
+
+/* TYPING EFFECT */
+
 const words=[
 "Esports Enthusiast",
 "Technology Learner",
-"Future Developer",
-"Gamer With Purpose"
+"Future Web Developer",
+"Gamer With Purpose",
+"Founder of Lerff Esport Journal"
 ];
 
-let i=0;
-let j=0;
-let current="";
-let isDeleting=false;
+let wordIndex=0;
+let charIndex=0;
+let deleting=false;
 
-function type(){
-current=words[i];
+function typeEffect(){
 
-if(!isDeleting){
-document.getElementById("typing").textContent=current.substring(0,j++);
-if(j>current.length+1){
-isDeleting=true;
-setTimeout(type,1000);
+const element=document.getElementById("typing");
+
+const currentWord=words[wordIndex];
+
+if(!deleting){
+
+element.textContent=
+currentWord.substring(0,charIndex++);
+
+if(charIndex>currentWord.length){
+
+deleting=true;
+
+setTimeout(typeEffect,1500);
+
 return;
 }
+
 }else{
-document.getElementById("typing").textContent=current.substring(0,j--);
-if(j<0){
-isDeleting=false;
-i=(i+1)%words.length;
+
+element.textContent=
+currentWord.substring(0,charIndex--);
+
+if(charIndex<0){
+
+deleting=false;
+
+wordIndex=(wordIndex+1)%words.length;
 }
+
 }
-setTimeout(type,isDeleting?50:120);
+
+setTimeout(typeEffect,deleting?50:100);
 }
-type();
+
+typeEffect();
+
+/* PARTICLES */
 
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
@@ -365,39 +537,76 @@ const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
-let particles=[];
+const particles=[];
 
-for(let i=0;i<80;i++){
+for(let i=0;i<100;i++){
+
 particles.push({
+
 x:Math.random()*canvas.width,
+
 y:Math.random()*canvas.height,
+
 r:Math.random()*2+1,
+
 dx:(Math.random()-0.5)*1,
+
 dy:(Math.random()-0.5)*1
+
 });
+
 }
 
-function animate(){
+function animateParticles(){
+
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
 particles.forEach(p=>{
+
 ctx.beginPath();
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+
+ctx.arc(
+p.x,
+p.y,
+p.r,
+0,
+Math.PI*2
+);
+
 ctx.fillStyle="#22d3ee";
+
 ctx.fill();
 
 p.x+=p.dx;
 p.y+=p.dy;
 
-if(p.x<0||p.x>canvas.width)p.dx*=-1;
-if(p.y<0||p.y>canvas.height)p.dy*=-1;
-});
-
-requestAnimationFrame(animate);
+if(p.x<0||p.x>canvas.width){
+p.dx*=-1;
 }
 
-animate();
+if(p.y<0||p.y>canvas.height){
+p.dy*=-1;
+}
+
+});
+
+requestAnimationFrame(
+animateParticles
+);
+
+}
+
+animateParticles();
+
+window.addEventListener(
+"resize",
+()=>{
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+}
+);
+
 </script>
 
 </body>
-</html>
+  </html>
